@@ -800,11 +800,3 @@ function strToParsiDate(str){
         raise
         DAexception("Please enter correct date and time!?");
     }
-        
-     
-    
-        
-
-        
-
-
