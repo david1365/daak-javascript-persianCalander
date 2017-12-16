@@ -104,18 +104,18 @@ const daysCount4 = (yearsCount4 * daysCountNormalYear) + anomalyYearsCount4OR5;
 //شماره سال های کبیسه
 const arrYearNumber = ( 0, 5, 9, 13, 17, 21, 25, 29, 33, 37 );
 //نام برج های سال
-const parsiMonthName = { 1{'فروردین',
-                   2{'ارديبهشت',
-                   3{'خرداد',
-                   4{'تير',
-                   5{'امرداد',
-                   6{'شهريور',
-                   7{'مهر',
-                   8{'آبان',
-                   9{'آذر',
-                   10{'دى',
-                   11{'بهمن',
-                   12{'اسفند'};
+const parsiMonthName = { 1:'فروردین',
+                        2:'ارديبهشت',
+                        3:'خرداد',
+                        4:'تير',
+                        5:'امرداد',
+                        6:'شهريور',
+                        7:'مهر',
+                        8:'آبان',
+                        9:'آذر',
+                        10:'دى',
+                        11:'بهمن',
+                        12:'اسفند'};
 //روزهای هفته
 const parsiDayOfWeek = [ "شنبه", "يكشنبه", "دوشنبه", "سه شنبه", "چهارشنبه", "پنجشنبه", "جمعه" ];
 
@@ -141,8 +141,7 @@ function which2820(ParsiYear) {
      توضیح=>اگر سال ورودی از 1 کمتر باشد خطا صادر می شود
     */
     if (ParsiYear <= 0) {
-        raise
-        DAexception(".سال مورد قبول از یک شروع می شود")
+        throw (".سال مورد قبول از یک شروع می شود")
     }
 
     ParsiYear += yearsCountblink;
@@ -416,8 +415,7 @@ function parsiMonthDaysCount(ParsiYear, Month) {
     */
 
     if ((Month > 12) || (Month < 1)) {
-        raise
-        DAexception(".شماره برح های فارسی از 1 شروع شده و به 12 ختم می شود");
+        throw(".شماره برح های فارسی از 1 شروع شده و به 12 ختم می شود");
     }
 
     if ((Month >= 1) && (Month <= 6)) {
@@ -564,8 +562,7 @@ function firstDayMonth(ParsiYear, MonthNumber) {
      توضیح=>اگر شماره ماه از 1 کوچکتر و از 12 بزرگتر باشد خطا صادر می شود
     */
     if ((MonthNumber > 12) || (MonthNumber < 1)) {
-        raise
-        DAexception(".شماره برح های فارسی از 1 شروع شده و به 12 ختم می شود");
+        throw(".شماره برح های فارسی از 1 شروع شده و به 12 ختم می شود");
     }
     var First = firstDayYear(ParsiYear);//روز اول سال مورد نظر
 
@@ -701,8 +698,7 @@ function convertToParsiDate(Date) {
      توضیح=>اگر تاریخ ورودی از تاریخ - 0622/03/22 - میلادی کمتر باشد خطا صادر می شود
     */
     if (Date < datetime(622, 3, 22)) {
-        raise
-        DAexception(".تاریخ 0622/03/22 میلادی برار با روز اول تاریخ خورشیدی است" + "\n .باید تاریخ ورودی برابر یا بزرگتر از این تاریخ باشد")
+        throw(".تاریخ 0622/03/22 میلادی برار با روز اول تاریخ خورشیدی است" + "\n .باید تاریخ ورودی برابر یا بزرگتر از این تاریخ باشد")
     }
 
     var RestDays = 0;
@@ -753,7 +749,7 @@ function convertToGregorian(parsiDate) {
 }
 
 
-function strToParsiDate(str){
+function strToParsiDate(str) {
     /*
     تبدیل رشته به تاریخ خورشیدی
     */
@@ -796,7 +792,7 @@ function strToParsiDate(str){
 
         return DaParsiDateTime(splitDate[0], splitDate[1], splitDate[2], splitTime[0], splitTime[1], splitTime[2], splitTime[3]);
     }
-    except{
-        raise
-        DAexception("Please enter correct date and time!?");
+    catch (e) {
+        throw("Please enter correct date and time!?");
     }
+}
