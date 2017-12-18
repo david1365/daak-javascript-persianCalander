@@ -6,10 +6,16 @@
 
     <link rel="stylesheet" href="qunit/qunit-2.4.1.css">
     <script src="qunit/qunit-2.4.1.js"></script>
-
+    <script src="../daak-persianCalander/daak-convertDate.js"></script>
     <script>
-        QUnit.test( "hello test", function( assert ) {
-            assert.ok( 1 == "2", "Passed!" );
+        QUnit.test( "which2820", function( assert ) {
+            assert.equal( daak.which2820(1396), 2, "which2820, Two; equal succeeds" );
+            assert.equal( daak.which2820(100), 1, "which2820, Two; equal succeeds" );
+
+            assert.throws(
+                daak.which2820(0),
+                "throws with just a message, not using the 'expected' argument"
+            );
         });
     </script>
 </head>
