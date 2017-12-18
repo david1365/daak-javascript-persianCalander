@@ -102,7 +102,7 @@ const daysCount4 = (yearsCount4 * daysCountNormalYear) + anomalyYearsCount4OR5;
 
 
 //شماره سال های کبیسه
-const arrYearNumber = ( 0, 5, 9, 13, 17, 21, 25, 29, 33, 37 );
+const arrYearNumber = [0, 5, 9, 13, 17, 21, 25, 29, 33, 37];
 //نام برج های سال
 const parsiMonthName = { 1:'فروردین',
                         2:'ارديبهشت',
