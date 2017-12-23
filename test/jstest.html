@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input value="ali">
+    <script src="../daak-persianCalander/daak-convertDate.js"></script>
+    <input id="test" value="david">
+
+    <script src="../daak-persianCalander/jsample.js"></script>
+    <script>
+
+        jQuery.fn.val = function () {
+            return this[0].value;
+        }
+
+        jQuery.al = function (value) {
+            alert(value);
+        }
+
+       jQuery.al(jQuery(document.getElementById("test")).val());
+    </script>
+
+</body>
+</html>
